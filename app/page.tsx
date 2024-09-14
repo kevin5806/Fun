@@ -2,25 +2,27 @@
 
 import { useEffect, useState } from "react";
 
+type Element = {
+    x: number;
+    y: number;
+};
+
 export default function Home() {
-    const [arr, setArr] = useState();
+    const [arr, setArr] = useState<Element[]>([]);
 
-    const ran = () => {
-        return Math.random() * 16;
-    };
+    // Funzione che genera un numero casuale tra 0 e 16
+    const ran = () => Math.random() * 16;
 
-    const ran100 = () => {
-        return Math.random() * 100;
-    };
+    // Funzione che genera un numero casuale tra 0 e 100
+    const ran100 = () => Math.random() * 100;
 
+    // Effetto che genera i dati e imposta l'aggiornamento ogni 4 secondi
     useEffect(() => {
         const render = () => {
-            const array:any = [];
-
+            const array: Element[] = [];
             for (let i = 0; i < 20000; i++) {
-                array[i] = { x: ran(), y: ran() };
+                array.push({ x: ran(), y: ran() });
             }
-
             return array;
         };
 
@@ -28,16 +30,19 @@ export default function Home() {
             setArr(render());
         };
 
+        // Prima esecuzione
         run();
 
-        setInterval(() => {
-            run();
-        }, 4000);
-    }, [setArr]);
+        // Aggiorna i dati ogni 4 secondi
+        const intervalId = setInterval(run, 4000);
+
+        // Pulizia dell'intervallo quando il componente viene smontato
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <div className="flex flex-wrap">
-            {arr?.map((element: any, index: any) => (
+            {arr?.map((element, index) => (
                 <div
                     key={index}
                     className="flex justify-center items-center size-3"
