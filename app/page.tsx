@@ -45,7 +45,7 @@ export default function Home() {
             {arr?.map((element, index) => (
                 <div
                     key={index}
-                    className="flex justify-center items-center size-3"
+                    className="flex justify-center items-center size-4"
                 >
                     <div
                         style={{
@@ -53,7 +53,7 @@ export default function Home() {
                             height: `${element.y}px`,
                             minWidth: `${element.x}px`,
                         }}
-                        className="bg-white"
+                        className="bg-black"
                     ></div>
                 </div>
             ))}
