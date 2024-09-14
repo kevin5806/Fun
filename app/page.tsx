@@ -20,7 +20,7 @@ export default function Home() {
     useEffect(() => {
         const render = () => {
             const array: Element[] = [];
-            for (let i = 0; i < 18000; i++) {
+            for (let i = 0; i < 11000; i++) {
                 array.push({ x: ran(), y: ran() });
             }
             return array;
