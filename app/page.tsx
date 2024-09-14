@@ -13,17 +13,17 @@ export default function Home() {
         return Math.random() * 100;
     };
 
-    const render = () => {
-        const array: any = [];
-
-        for (let i = 0; i < 20000; i++) {
-            array[i] = { x: ran(), y: ran() };
-        }
-
-        return array;
-    };
-
     useEffect(() => {
+        const render = () => {
+            const array: any = [];
+
+            for (let i = 0; i < 20000; i++) {
+                array[i] = { x: ran(), y: ran() };
+            }
+
+            return array;
+        };
+
         const run = () => {
             setArr(render());
         };
@@ -33,7 +33,7 @@ export default function Home() {
         setInterval(() => {
             run();
         }, 4000);
-    }, [render]);
+    }, [setArr]);
 
     return (
         <div className="flex flex-wrap">
