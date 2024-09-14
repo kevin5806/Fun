@@ -38,7 +38,10 @@ export default function Home() {
     return (
         <div className="flex flex-wrap">
             {arr?.map((element: any, index: any) => (
-                <div className="flex justify-center items-center size-3">
+                <div
+                    key={index}
+                    className="flex justify-center items-center size-3"
+                >
                     <div
                         style={{
                             opacity: `${ran100()}%`,
@@ -46,7 +49,6 @@ export default function Home() {
                             minWidth: `${element.x}px`,
                         }}
                         className="bg-white"
-                        key={index}
                     ></div>
                 </div>
             ))}
