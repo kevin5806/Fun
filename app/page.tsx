@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [arr, setArr]: any = useState([]);
+    const [arr, setArr] = useState([]);
 
     const ran = () => {
         return Math.random() * 16;
@@ -15,7 +15,7 @@ export default function Home() {
 
     useEffect(() => {
         const render = () => {
-            const array: any = [];
+            const array = [];
 
             for (let i = 0; i < 20000; i++) {
                 array[i] = { x: ran(), y: ran() };
