@@ -9,7 +9,7 @@ export default function Home() {
         return Math.random() * 16;
     };
 
-	const ran100 = () => {
+    const ran100 = () => {
         return Math.random() * 100;
     };
 
@@ -28,12 +28,12 @@ export default function Home() {
             setArr(render());
         };
 
-		run()
+        run();
 
         setInterval(() => {
             run();
         }, 4000);
-    }, []);
+    }, [render]);
 
     return (
         <div className="flex flex-wrap">
@@ -41,7 +41,7 @@ export default function Home() {
                 <div className="flex justify-center items-center size-3">
                     <div
                         style={{
-							opacity: `${ran100()}%`,
+                            opacity: `${ran100()}%`,
                             height: `${element.y}px`,
                             minWidth: `${element.x}px`,
                         }}
