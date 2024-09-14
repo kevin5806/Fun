@@ -11,7 +11,7 @@ export default function Home() {
     const [arr, setArr] = useState<Element[]>([]);
 
     // Funzione che genera un numero casuale tra 0 e 16
-    const ran = () => Math.random() * 16;
+    const ran = () => Math.random() * 18;
 
     // Funzione che genera un numero casuale tra 0 e 100
     const ran100 = () => Math.random() * 100;
