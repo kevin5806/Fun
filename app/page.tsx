@@ -14,7 +14,7 @@ export default function Home() {
     };
 
     const render = () => {
-        let array: any = [];
+        const array: any = [];
 
         for (let i = 0; i < 20000; i++) {
             array[i] = { x: ran(), y: ran() };
